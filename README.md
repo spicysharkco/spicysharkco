@@ -1,9 +1,15 @@
 ### spicysharkco
 
-Building more efficient AI infrastructure.
+AI infra · robotics · optimization
 
-I'm an engineer working across AI, data centers and robotics. I measure where systems waste compute, fix the root cause, and send the fix upstream so everyone gets it.
+Contributor: [kube-router](https://github.com/cloudnativelabs/kube-router)
 
-#### Selected open-source work
+#### Open source
 
-- **kube-router** [#2192](https://github.com/cloudnativelabs/kube-router/pull/2192): removed a per-pod copy of the network-policy rules buffer. In benchmarks, that step of each policy sync runs about 300x faster and allocates 99.8% less memory.
+- **kube-router** [#2192](https://github.com/cloudnativelabs/kube-router/pull/2192) (merged):
+  removed a per-pod copy of the network-policy rules buffer.
+  That sync step runs ~300x faster with 99.8% less memory.
+- **[sharkline](https://github.com/spicysharkco/sharkline)**:
+  fast Claude Code statusline in Rust.
+- **[sharkswap](https://github.com/spicysharkco/sharkswap)**:
+  Claude Code account switcher.
