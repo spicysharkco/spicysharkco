@@ -11,7 +11,9 @@ Contributor: [k3s](https://github.com/k3s-io/k3s) · [kube-router](https://githu
 - **[sharkswap](https://github.com/spicysharkco/sharkswap)**:
   Claude Code account switcher.
 
-#### Highlight
+#### Highlights
 
 - **kube-router** [#2192](https://github.com/cloudnativelabs/kube-router/pull/2192):
   network-policy sync step ~300x faster, 99.8% less memory.
+- **k3s** [#14801](https://github.com/k3s-io/k3s/pull/14801):
+  `--disable-etcd` on an existing server now removes its etcd member.
