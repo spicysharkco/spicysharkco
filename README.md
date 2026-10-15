@@ -3,12 +3,15 @@
 Infrastructure and performance engineer for AI systems: Kubernetes networking and control planes, LLM inference,
 AI coding-agent tooling, and sim-to-real perception for robotics. Go · Rust · Python · TypeScript.
 
-#### Kubernetes
+#### Infrastructure
 
 - **[kube-router](https://github.com/cloudnativelabs/kube-router)** [#2192](https://github.com/cloudnativelabs/kube-router/pull/2192):
   removed a per-pod copy of the iptables filter table from network-policy sync: ~300x faster, 99.8% less memory.
 - **[k3s](https://github.com/k3s-io/k3s)** [#14801](https://github.com/k3s-io/k3s/pull/14801):
   `--disable-etcd` on an existing server now removes its etcd member instead of leaving a stale one in the cluster.
+- **[redis-py](https://github.com/redis/redis-py)** [#4434](https://github.com/redis/redis-py/pull/4434):
+  the asyncio client no longer leaves a reference cycle on every server error reply; with the cyclic GC off,
+  1,000 error replies used to leave 1,000 exceptions alive, now 0.
 
 #### AI coding agents
 
