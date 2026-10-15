@@ -1,7 +1,7 @@
 ### spicysharkco
 
-Infrastructure and performance for AI systems: Kubernetes, LLM inference, coding agents, robotics perception.
-Go · Rust · Python · TypeScript · Write-ups at [spicysharkco.github.io](https://spicysharkco.github.io)
+Infrastructure and performance for AI systems: Kubernetes, LLM inference, coding agents, robotics.
+Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.io](https://spicysharkco.github.io)
 
 #### Infrastructure
 
@@ -19,10 +19,11 @@ Go · Rust · Python · TypeScript · Write-ups at [spicysharkco.github.io](http
 | [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | [#4373](https://github.com/Yeachan-Heo/oh-my-claudecode/pull/4373) hooks start file-context injectors only for the tools they act on |
 | [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | [#10133](https://github.com/code-yeongyu/oh-my-openagent/pull/10133) git diff stats read NUL-separated, so renamed and quoted paths keep their counts |
 
-#### Robotics perception
+#### Robotics
 
 | Project | What | Result | Story |
 |---|---|---|---|
+| [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) (ROS 2) | [#905](https://github.com/SteveMacenski/slam_toolbox/pull/905) node removal stops copying the pose graph's vertex map and edge list | 84x faster per removal on a 19,870-vertex map (benchmark) | |
 | [chess-sim2real-benchmark](https://github.com/spicysharkco/chess-sim2real-benchmark) · [dataset](https://huggingface.co/datasets/spicysharkco/chess-sim2real-benchmark) | render generator and 20,000-image sim-to-real benchmark | a colour-convention fix took per-square accuracy from 54.4 to 85.2 | [post](https://spicysharkco.github.io/2026/10/15/colour-convention-looked-like-domain-gap.html) |
 
 #### Tools
