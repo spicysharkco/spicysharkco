@@ -10,6 +10,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | [#2192](https://github.com/cloudnativelabs/kube-router/pull/2192) network-policy sync stops copying the iptables table once per pod | 320x faster, 99.8% less allocation (benchmark) | [post](https://spicysharkco.github.io/2026/10/15/kube-router-netpol-sync-copy.html) |
 | [k3s](https://github.com/k3s-io/k3s) | [#14801](https://github.com/k3s-io/k3s/pull/14801) `--disable-etcd` on an existing server removes its etcd member | no stale member left in the cluster | |
 | [k3s](https://github.com/k3s-io/k3s) | [#14811](https://github.com/k3s-io/k3s/pull/14811) tunnel proxy stops leaking a goroutine when both directions of a connection fail | 1,029 leaked goroutines → 0 (10,000-run test) | |
+| [kine](https://github.com/k3s-io/kine) | [#800](https://github.com/k3s-io/kine/pull/800) compaction retries on MariaDB error 1020, so kine runs on MariaDB 11.8 | 44 failed compactions → 0 in 45 s of concurrent writes | |
 | [redis-py](https://github.com/redis/redis-py) | [#4434](https://github.com/redis/redis-py/pull/4434) asyncio client breaks the reference cycle on each error reply | 1,000 leaked exceptions → 0 (GC off) | [post](https://spicysharkco.github.io/2026/10/15/redis-py-asyncio-error-reference-cycle.html) |
 
 #### AI coding agents
