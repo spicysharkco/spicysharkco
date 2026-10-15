@@ -2,7 +2,7 @@
 
 AI infra · robotics · optimization
 
-Contributor: [k3s](https://github.com/k3s-io/k3s) · [kube-router](https://github.com/cloudnativelabs/kube-router) · [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) · [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex)
+Contributor: [k3s](https://github.com/k3s-io/k3s) · [kube-router](https://github.com/cloudnativelabs/kube-router) · [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) · [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) · [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent)
 
 #### Projects
 
