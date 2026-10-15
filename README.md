@@ -1,7 +1,7 @@
 ### spicysharkco
 
 Infrastructure and performance engineer for AI systems: Kubernetes networking and control planes, LLM inference,
-and AI coding-agent tooling. Go · Rust · Python · TypeScript.
+AI coding-agent tooling, and sim-to-real perception for robotics. Go · Rust · Python · TypeScript.
 
 #### Kubernetes
 
@@ -22,6 +22,14 @@ and [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent), includin
   hooks start file-context injectors only for the tools they act on.
 - **oh-my-openagent** [#10133](https://github.com/code-yeongyu/oh-my-openagent/pull/10133):
   git diff stats read NUL-separated, so renamed and quoted paths keep their counts.
+
+#### Robotics perception
+
+- **[chess-sim2real-benchmark](https://github.com/spicysharkco/chess-sim2real-benchmark)**
+  ([dataset](https://huggingface.co/datasets/spicysharkco/chess-sim2real-benchmark)):
+  a render generator and a 20,000-image benchmark that measures what synthetic training data buys and costs
+  when a perception model moves from renders to a camera. One finding: a board colour-convention mismatch
+  looked like a domain shift; fixing one renderer expression raised per-square accuracy from 54.4 to 85.2.
 
 #### Tools
 
