@@ -11,9 +11,16 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [k3s](https://github.com/k3s-io/k3s) | [#14801](https://github.com/k3s-io/k3s/pull/14801) `--disable-etcd` on an existing server removes its etcd member | no stale member left in the cluster | |
 | [k3s](https://github.com/k3s-io/k3s) | [#14811](https://github.com/k3s-io/k3s/pull/14811) tunnel proxy stops leaking a goroutine when both directions of a connection fail | 1,029 leaked goroutines → 0 (10,000-run test) | [post](https://spicysharkco.github.io/2026/10/16/k3s-proxy-goroutine-leak.html) |
 | [kine](https://github.com/k3s-io/kine) | [#800](https://github.com/k3s-io/kine/pull/800) compaction retries on MariaDB error 1020, so kine runs on MariaDB 11.8 | 44 failed compactions → 0 in 45 s of concurrent writes | |
-| [cri-tools](https://github.com/kubernetes-sigs/cri-tools) (crictl) | [#2212](https://github.com/kubernetes-sigs/cri-tools/pull/2212) `make verify` checks docs and vendor drift in a temp dir instead of rewriting the tree | tree byte-identical after every run | |
+| [cri-tools](https://github.com/kubernetes-sigs/cri-tools) (crictl) | [#2212](https://github.com/kubernetes-sigs/cri-tools/pull/2212) `make verify` checks docs and vendor drift in a temp dir instead of rewriting the tree | tree byte-identical after every run | [post](https://spicysharkco.github.io/2026/10/16/cri-tools-verify-does-not-write.html) |
+| [external-dns](https://github.com/kubernetes-sigs/external-dns) | [#6805](https://github.com/kubernetes-sigs/external-dns/pull/6805) TXT registry computes only the ownership record name when checking for missing records, instead of rendering and encrypting every record's labels | 512 ms → 23 ms per reconcile with TXT encryption on, 96% less allocation (1k records, benchmark) | |
 | [redis-py](https://github.com/redis/redis-py) | [#4434](https://github.com/redis/redis-py/pull/4434) asyncio client breaks the reference cycle on each error reply | 1,000 leaked exceptions → 0 (GC off) | [post](https://spicysharkco.github.io/2026/10/15/redis-py-asyncio-error-reference-cycle.html) |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1115](https://github.com/burningalchemist/sql_exporter/pull/1115) log context trims its leading comma again, so failed queries stop logging a false "Invalid context log item" warning | 1 false warning per failed query → 0 (test) | |
+
+#### LLM inference
+
+| Project | Merged change | Result | Story |
+|---|---|---|---|
+| [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3126](https://github.com/vllm-project/aibrix/pull/3126) Hugging Face LoRA adapters download into the adapter directory | first and repeat loads hand the engine the same path | [post](https://spicysharkco.github.io/2026/10/16/aibrix-lora-adapter-directory.html) |
 
 #### AI coding agents
 
