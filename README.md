@@ -1,6 +1,6 @@
 ### spicysharkco
 
-I build products and fix the infrastructure under them upstream: Kubernetes, LLM inference, coding agents, robotics.
+AI infra, performance, robotics. I send fixes upstream for what I run into: Kubernetes, LLM inference, coding agents, ROS 2, OpenCV.
 Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.io](https://spicysharkco.github.io)
 
 #### Infrastructure
