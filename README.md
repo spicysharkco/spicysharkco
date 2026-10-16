@@ -1,6 +1,6 @@
 ### spicysharkco
 
-Infrastructure and performance for AI systems: Kubernetes, LLM inference, coding agents, robotics.
+I build products and fix the infrastructure under them upstream: Kubernetes, LLM inference, coding agents, robotics.
 Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.io](https://spicysharkco.github.io)
 
 #### Infrastructure
