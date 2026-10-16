@@ -19,9 +19,9 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 
 | Project | Merged change |
 |---|---|
-| [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | [#3791](https://github.com/Yeachan-Heo/oh-my-codex/pull/3791) HUD caches the git branch label until HEAD, refs or config change |
-| [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | [#4373](https://github.com/Yeachan-Heo/oh-my-claudecode/pull/4373) hooks start file-context injectors only for the tools they act on |
-| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | [#10133](https://github.com/code-yeongyu/oh-my-openagent/pull/10133) git diff stats read NUL-separated, so renamed and quoted paths keep their counts |
+| [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | [#3791](https://github.com/Yeachan-Heo/oh-my-codex/pull/3791) HUD caches the git branch label until HEAD, refs or config change · [all 4 merged](https://github.com/Yeachan-Heo/oh-my-codex/pulls?q=is%3Apr+author%3Aspicysharkco+is%3Amerged) |
+| [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | [#4373](https://github.com/Yeachan-Heo/oh-my-claudecode/pull/4373) hooks start file-context injectors only for the tools they act on · [all 7 merged](https://github.com/Yeachan-Heo/oh-my-claudecode/pulls?q=is%3Apr+author%3Aspicysharkco+is%3Amerged) |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | [#10133](https://github.com/code-yeongyu/oh-my-openagent/pull/10133) git diff stats read NUL-separated, so renamed and quoted paths keep their counts · [all 2 merged](https://github.com/code-yeongyu/oh-my-openagent/pulls?q=is%3Apr+author%3Aspicysharkco+is%3Amerged) |
 
 #### Robotics
 
