@@ -27,7 +27,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 
 | Project | What | Result | Story |
 |---|---|---|---|
-| [OpenCV](https://github.com/opencv/opencv) (calib3d) | [#30316](https://github.com/opencv/opencv/pull/30316) `validateDisparity` skips out-of-range disparities instead of indexing past the row buffers | fixes a crash reported in April 2024 ([#25367](https://github.com/opencv/opencv/issues/25367)); two earlier fixes were closed | |
+| [OpenCV](https://github.com/opencv/opencv) (calib3d) | [#30316](https://github.com/opencv/opencv/pull/30316) `validateDisparity` skips out-of-range disparities instead of indexing past the row buffers | fixes a crash reported in April 2024 ([#25367](https://github.com/opencv/opencv/issues/25367)); two earlier fixes were closed | [post](https://spicysharkco.github.io/2026/10/16/opencv-validatedisparity-out-of-bounds.html) |
 | [slam_toolbox](https://github.com/SteveMacenski/slam_toolbox) (ROS 2) | [#905](https://github.com/SteveMacenski/slam_toolbox/pull/905) node removal stops copying the pose graph's vertex map and edge list | 84x faster per removal on a 19,870-vertex map (benchmark) | |
 | [chess-sim2real-benchmark](https://github.com/spicysharkco/chess-sim2real-benchmark) · [dataset](https://huggingface.co/datasets/spicysharkco/chess-sim2real-benchmark) | render generator and 20,000-image sim-to-real benchmark | a colour-convention fix took per-square accuracy from 54.4 to 85.2 | [post](https://spicysharkco.github.io/2026/10/15/colour-convention-looked-like-domain-gap.html) |
 
