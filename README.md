@@ -13,6 +13,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [kine](https://github.com/k3s-io/kine) | [#800](https://github.com/k3s-io/kine/pull/800) compaction retries on MariaDB error 1020, so kine runs on MariaDB 11.8 | 44 failed compactions → 0 in 45 s of concurrent writes | |
 | [cri-tools](https://github.com/kubernetes-sigs/cri-tools) (crictl) | [#2212](https://github.com/kubernetes-sigs/cri-tools/pull/2212) `make verify` checks docs and vendor drift in a temp dir instead of rewriting the tree | tree byte-identical after every run | |
 | [redis-py](https://github.com/redis/redis-py) | [#4434](https://github.com/redis/redis-py/pull/4434) asyncio client breaks the reference cycle on each error reply | 1,000 leaked exceptions → 0 (GC off) | [post](https://spicysharkco.github.io/2026/10/15/redis-py-asyncio-error-reference-cycle.html) |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1115](https://github.com/burningalchemist/sql_exporter/pull/1115) log context trims its leading comma again, so failed queries stop logging a false "Invalid context log item" warning | 1 false warning per failed query → 0 (test) | |
 
 #### AI coding agents
 
