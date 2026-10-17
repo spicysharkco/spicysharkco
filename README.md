@@ -21,6 +21,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | Project | Merged change | Result | Story |
 |---|---|---|---|
 | [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3126](https://github.com/vllm-project/aibrix/pull/3126) Hugging Face LoRA adapters download into the adapter directory | first and repeat loads hand the engine the same path | [post](https://spicysharkco.github.io/2026/10/16/aibrix-lora-adapter-directory.html) |
+| [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3130](https://github.com/vllm-project/aibrix/pull/3130) runtime sidecar accepts the `hf://` adapter URLs the webhook already allows | `hf://` adapters load instead of failing with "Unsupported URL scheme" | |
 
 #### AI coding agents
 
