@@ -1,7 +1,7 @@
 ### spicysharkco
 
-AI infra, data, performance, robotics. I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooling, coding agents, ROS 2, OpenCV.
-Go · Rust · Python · C++ · TypeScript · Write-ups at [spicyshark.co](https://spicyshark.co)
+AI research and infra, data, performance, robotics. I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooling, coding agents, ROS 2, OpenCV.
+Go · Rust · Python · C++ · TypeScript · Write-ups at [spicyshark.co](https://spicyshark.co) · Research at [spicyshark.co/research](https://spicyshark.co/research/)
 
 #### Infrastructure
 
