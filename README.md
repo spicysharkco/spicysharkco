@@ -65,6 +65,12 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicyshark.co](https:
 | [mediamtx](https://github.com/bluenviron/mediamtx) (camera streaming) | [#6359](https://github.com/bluenviron/mediamtx/pull/6359) fMP4 recordings of a VP9 track store the frame height instead of repeating the width | 1920x804 stream: init segment `Height: 1920` → `Height: 804` | [post](https://spicysharkco.github.io/2026/10/17/mediamtx-vp9-recording-height.html) |
 | [chess-sim2real-benchmark](https://github.com/spicysharkco/chess-sim2real-benchmark) · [dataset](https://huggingface.co/datasets/spicysharkco/chess-sim2real-benchmark) | render generator and 20,000-image sim-to-real benchmark | a colour-convention fix took per-square accuracy from 54.4 to 85.2 | [post](https://spicysharkco.github.io/2026/10/15/colour-convention-looked-like-domain-gap.html) |
 
+#### Models
+
+| Model | Method | Result |
+|---|---|---|
+| [Qwen3.8-27B-OBLITERATED-DYN-GGUF](https://huggingface.co/spicysharkco/Qwen3.8-27B-OBLITERATED-DYN-GGUF) | GGUF quants of [OBLITERATUS/Qwen3.8-27B-OBLITERATED](https://huggingface.co/OBLITERATUS/Qwen3.8-27B-OBLITERATED) with a quant type per tensor group, chosen by measured KL-divergence sensitivity inside a fixed file-size budget | same size as the upstream Q4_K_M (16.81 GB): mean KL divergence from BF16 0.0348 → 0.0195, same top token 93.84% → 95.33%; CPU prompt processing 0.85x |
+
 #### Tools
 
 - [sharkline](https://github.com/spicysharkco/sharkline): Claude Code statusline in Rust.
