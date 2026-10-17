@@ -16,6 +16,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [redis-py](https://github.com/redis/redis-py) | [#4434](https://github.com/redis/redis-py/pull/4434) asyncio client breaks the reference cycle on each error reply | 1,000 leaked exceptions → 0 (GC off) | [post](https://spicysharkco.github.io/2026/10/15/redis-py-asyncio-error-reference-cycle.html) |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1115](https://github.com/burningalchemist/sql_exporter/pull/1115) log context trims its leading comma again, so failed queries stop logging a false "Invalid context log item" warning | 1 false warning per failed query → 0 (test) | [post](https://spicysharkco.github.io/2026/10/16/sql-exporter-false-context-warning.html) |
 | [pgx](https://github.com/jackc/pgx) | [#2689](https://github.com/jackc/pgx/pull/2689) interval text encoding no longer overflows on the minimum microseconds value, so the text scans back | `--2562047788:00:-54.-775808` → `-2562047788:00:54.775808`, same as PostgreSQL 18 |  |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1116](https://github.com/burningalchemist/sql_exporter/pull/1116) concurrent `/metrics?jobs[]=` scrapes stop sharing one job filter, so each response holds only its own job's series | 20 of 20 mixed-job test runs → 0, `go test -race` clean |  |
 
 #### LLM inference
 
@@ -26,6 +27,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3132](https://github.com/vllm-project/aibrix/pull/3132) per-model HTTPRoute matches `/v1/images/generations` | image requests with no routing strategy reach the model instead of finding no route | [post](https://spicysharkco.github.io/2026/10/17/aibrix-image-generations-route.html) |
 | [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3131](https://github.com/vllm-project/aibrix/pull/3131) runtime sidecar loads adapters from a mounted local path (`/...`) that the webhook already allows | local-path adapters load with the sidecar on, under the same name check as other sources || [post](https://spicysharkco.github.io/2026/10/17/aibrix-adapter-urls-webhook-vs-sidecar.html) |
 | [AIBrix](https://github.com/vllm-project/aibrix) (vLLM) | [#3133](https://github.com/vllm-project/aibrix/pull/3133) model-router custom paths reach the HTTPRoute once each; the dedup set was never written | repeated or default paths no longer count toward the 64-match route limit || [post](https://spicysharkco.github.io/2026/10/17/aibrix-dedup-set-never-written.html) |
+| [OME](https://github.com/ome-projects/ome) | [#1231](https://github.com/ome-projects/ome/pull/1231) a computed environment override replaces a ConfigMap or Secret source instead of leaving it beside the new value | engine Deployment no longer rejected for `value` plus `valueFrom` |  |
 
 #### AI coding agents
 
