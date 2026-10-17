@@ -17,6 +17,7 @@ Go · Rust · Python · C++ · TypeScript · Write-ups at [spicysharkco.github.i
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1115](https://github.com/burningalchemist/sql_exporter/pull/1115) log context trims its leading comma again, so failed queries stop logging a false "Invalid context log item" warning | 1 false warning per failed query → 0 (test) | [post](https://spicysharkco.github.io/2026/10/16/sql-exporter-false-context-warning.html) |
 | [pgx](https://github.com/jackc/pgx) | [#2689](https://github.com/jackc/pgx/pull/2689) interval text encoding no longer overflows on the minimum microseconds value, so the text scans back | `--2562047788:00:-54.-775808` → `-2562047788:00:54.775808`, same as PostgreSQL 18 |  |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1116](https://github.com/burningalchemist/sql_exporter/pull/1116) concurrent `/metrics?jobs[]=` scrapes stop sharing one job filter, so each response holds only its own job's series | 20 of 20 mixed-job test runs → 0, `go test -race` clean | [post](https://spicysharkco.github.io/2026/10/17/sql-exporter-job-filters-per-request.html) |
+| [arrow-rs](https://github.com/apache/arrow-rs) | [#11628](https://github.com/apache/arrow-rs/pull/11628) CSV reader returns an error instead of panicking when a dictionary column holds more distinct values than its key type can index | 129 values with `Int8` keys: panic → `DictionaryKeyOverflowError` |  |
 
 #### LLM inference
 
