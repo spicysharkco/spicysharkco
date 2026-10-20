@@ -31,20 +31,36 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
   <a href="https://github.com/dapr/dapr"><img src="https://github.com/dapr.png?size=64" width="48" height="48" alt="Dapr" title="Dapr"></a>
 </p>
 
+Every project with more than 10,000 GitHub stars or at least 5 merged PRs, plus kube-router, largest first:
+
 | Project | What it is | Merged PRs | GitHub stars |
 |---|---|---|---|
-| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 19 | 956 |
-| [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
-| [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 10 | 7.2k |
-| [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 10 | 2.1k |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 8 | 601 |
+| [OpenCV](https://github.com/opencv/opencv) | Computer vision library | 2 | 91.3k |
+| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | Agent orchestration for OpenCode | 2 | 70.2k |
 | [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | Multi-agent orchestration for Claude Code | 7 | 40.1k |
-| [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
-| [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
+| [k9s](https://github.com/derailed/k9s) | Terminal UI for Kubernetes clusters | 1 | 34.9k |
+| [k3s](https://github.com/k3s-io/k3s) | Lightweight Kubernetes | 2 | 34.2k |
+| [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | Hooks and agent teams for Codex CLI | 4 | 33.6k |
+| [Dapr](https://github.com/dapr/dapr) | Runtime for distributed applications | 1 | 26.2k |
+| [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
+| [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 1 | 24.0k |
 | [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 4 | 20.5k |
+| [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
+| [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
+| [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
+| [redis-py](https://github.com/redis/redis-py) | Python client for Redis | 2 | 13.7k |
+| [Kubescape](https://github.com/kubescape/kubescape) | Kubernetes security scanner | 2 | 11.8k |
+| [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
+| [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 10 | 7.2k |
+| [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
+| [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
+| [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
+| [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 10 | 2.1k |
+| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 19 | 956 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 8 | 601 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
 
-The largest projects with a merged fix: OpenCV (91k stars), oh-my-openagent (70k), k9s (35k), k3s (34k), oh-my-codex (34k), Dapr (26k), yfinance (26k), Prefect (24k) and grpc-gateway (20k). Star counts as of 2026-10-20.
+Star counts as of 2026-10-20.
 
 ## Three fixes
 
