@@ -48,7 +48,7 @@ The largest projects with a merged fix: OpenCV (91k stars), oh-my-openagent (70k
 
 ## Three fixes
 
-### kube-router: 152.9 ms to 0.477 ms in one benchmark
+### kube-router: network-policy sync 320x faster, 99.8% less allocation (benchmark)
 
 - Failure: `syncPodFirewallChains` copied and scanned the whole iptables-save buffer once per local pod and IP family.
 - Fix: remove the check. The rule text it looked for is unique to one pod in one sync, so it could never match.
