@@ -11,7 +11,6 @@
   <a href="https://huggingface.co/spicysharkco"><img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face-spicysharkco-0a1626?style=for-the-badge"></a>
 </p>
 
-156 pull requests merged into 56 projects owned by others, as of 2026-10-20 ([GitHub search](https://github.com/search?q=is%3Apr+is%3Amerged+author%3Aspicysharkco+-user%3Aspicysharkco&type=pullrequests)). 15 of those projects have more than 10,000 GitHub stars.
 I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooling, robotics and OpenCV. I find a failure, fix it with a test where one fits, and measure what changed. More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
 ## Where the fixes landed
