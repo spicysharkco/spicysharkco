@@ -121,10 +121,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5024](https://github.com/DNSControl/dnscontrol/pull/5024) `DKIM_BUILDER` encodes non-ASCII notes as UTF-8 octets | `café` gave `n=caf=E9`, now `n=caf=C3=A9`; 3 non-ASCII test rows failed before | 2026-10-20 |
+| [franz-go](https://github.com/twmb/franz-go) | [#1507](https://github.com/twmb/franz-go/pull/1507) `Lag` builds its deduplicated group list without rewriting the caller's slice | The caller's `[a a b]` could come back as `[a b b]`; now it stays `[a a b]`; `TestLagDoesNotMutateInput` failed before | 2026-10-20 |
+| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5026](https://github.com/DNSControl/dnscontrol/pull/5026) BIND `GetZones` extracts zone names from `%f` and `%F` filenames | With `filenameformat` `db_%f`, `get-zones` printed `db_example.com`; now `example.com`; `Test_extractZonesFromFilenames` failed before | 2026-10-20 |
 | [oras-go](https://github.com/oras-project/oras-go) | [#1651](https://github.com/oras-project/oras-go/pull/1651) `TagN` reports the fetched size when it exceeds `MaxMetadataBytes` | The error printed size 0 for a 16-byte manifest; `TestTagN_Repository` and `TestFetchBytes_Memory` failed before | 2026-10-20 |
 | [minio-go](https://github.com/minio/minio-go) | [#2330](https://github.com/minio/minio-go/pull/2330) a short parallel streamed upload fails before the short part is sent | A 7 MiB reader declared as 12 MiB returned success with `Size=7340032`; now `UnexpectedEOF` | 2026-10-20 |
-| [k9s](https://github.com/derailed/k9s) | [#4318](https://github.com/derailed/k9s/pull/4318) release the aliases lock when an aliases file fails to parse | A broken `aliases.yaml` left the write lock held, so the next `:pods` blocked; `TestAliasesLoadFileInvalidYAML` failed before | 2026-10-20 |
 
 ## Full record
 
