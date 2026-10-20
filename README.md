@@ -104,10 +104,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [llm-d-router](https://github.com/llm-d/llm-d-router) | [#3476](https://github.com/llm-d/llm-d-router/pull/3476) `autoTune` per-pod LRU capacity is now sized in router blocks, not engine blocks | 31250 engine blocks of 16 tokens gave a 31250-entry LRU, now 7812 entries of 64 tokens; `TestMakeserver_AutotuneCapacityInRouterBlocks` failed before | 2026-10-20 |
 | [AIBrix](https://github.com/vllm-project/aibrix) | [#3174](https://github.com/vllm-project/aibrix/pull/3174) `PodAutoscaler` `scalingStrategy` is immutable | Changing the strategy in place left the old HPA scaling the target next to the new scaler; the change is now rejected | 2026-10-20 |
 | [Xinference](https://github.com/xorbitsai/inference) | [#5756](https://github.com/xorbitsai/inference/pull/5756) a streamed reasoning reply keeps a later `</think>` in the answer as content | Chunks `a`, `</think>`, `b`, `</think>`, `c` gave `content` `"bc"`; now `"b</think>c"` | 2026-10-19 |
 | [llm-d-inference-sim](https://github.com/llm-d/llm-d-inference-sim) | [#802](https://github.com/llm-d/llm-d-inference-sim/pull/802) a failed dataset download no longer leaves an empty file at `--dataset-path` | After a 503 the next start skipped the download and stayed blocked; now it retries; both new test cases failed before | 2026-10-19 |
-| [OME](https://github.com/ome-projects/ome) | [#1234](https://github.com/ome-projects/ome/pull/1234) runtime env overrides that switch between `value` and `valueFrom` no longer merge into one entry holding both | 3 of 4 merge cases were rejected by Kubernetes validation; now none are | 2026-10-17 |
 
 ### Infrastructure
 
