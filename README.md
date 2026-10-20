@@ -31,8 +31,6 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
   <a href="https://github.com/dapr/dapr"><img src="https://github.com/dapr.png?size=64" width="48" height="48" alt="Dapr" title="Dapr"></a>
 </p>
 
-Every project with more than 10,000 GitHub stars or at least 5 merged PRs, plus kube-router, largest first:
-
 | Project | What it is | Merged PRs | GitHub stars |
 |---|---|---|---|
 | [OpenCV](https://github.com/opencv/opencv) | Computer vision library | 2 | 91.3k |
