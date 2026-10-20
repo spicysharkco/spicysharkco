@@ -13,7 +13,7 @@
 
 I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooling, robotics and OpenCV. I find a failure, fix it with a test where one fits, and measure what changed. More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
-## Where the fixes landed
+## Contributions
 
 <p align="center">
   <a href="https://github.com/cloudnativelabs/kube-router"><img src="https://github.com/cloudnativelabs.png?size=64" width="48" height="48" alt="kube-router" title="kube-router"></a>
