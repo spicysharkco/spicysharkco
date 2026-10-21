@@ -98,7 +98,7 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
 | [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 10 | 2.1k |
-| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 19 | 956 |
+| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 20 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 8 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
 
@@ -121,10 +121,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [helmfile](https://github.com/helmfile/helmfile) | [#2837](https://github.com/helmfile/helmfile/pull/2837) `skipSchemaValidation` distinguishes a release `false` from unset | With the default `true`, a release `false` still added `--skip-schema-validation`; now no flag; `TestAppendSkipSchemaValidationFlagToChartifyTemplateArgs` failed before | 2026-10-21 |
+| [OjG](https://github.com/ohler55/ojg) | [#266](https://github.com/ohler55/ojg/pull/266) `Nth.Append` renders the minimum array index with `strconv.AppendInt` | `$[-9223372036854775808]` rendered as `$[-'..--).0-*(+,))+(0(]`; now it stays `$[-9223372036854775808]`; `TestExprBuild`, `TestExprSet` and `TestExprDel` failed before | 2026-10-21 |
 | [franz-go](https://github.com/twmb/franz-go) | [#1507](https://github.com/twmb/franz-go/pull/1507) `Lag` builds its deduplicated group list without rewriting the caller's slice | The caller's `[a a b]` could come back as `[a b b]`; now it stays `[a a b]`; `TestLagDoesNotMutateInput` failed before | 2026-10-20 |
 | [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5026](https://github.com/DNSControl/dnscontrol/pull/5026) BIND `GetZones` extracts zone names from `%f` and `%F` filenames | With `filenameformat` `db_%f`, `get-zones` printed `db_example.com`; now `example.com`; `Test_extractZonesFromFilenames` failed before | 2026-10-20 |
-| [oras-go](https://github.com/oras-project/oras-go) | [#1651](https://github.com/oras-project/oras-go/pull/1651) `TagN` reports the fetched size when it exceeds `MaxMetadataBytes` | The error printed size 0 for a 16-byte manifest; `TestTagN_Repository` and `TestFetchBytes_Memory` failed before | 2026-10-20 |
-| [minio-go](https://github.com/minio/minio-go) | [#2330](https://github.com/minio/minio-go/pull/2330) a short parallel streamed upload fails before the short part is sent | A 7 MiB reader declared as 12 MiB returned success with `Size=7340032`; now `UnexpectedEOF` | 2026-10-20 |
 
 ## Full record
 
