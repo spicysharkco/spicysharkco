@@ -121,10 +121,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [elasticsearch_exporter](https://github.com/prometheus-community/elasticsearch_exporter) | [#1260](https://github.com/prometheus-community/elasticsearch_exporter/pull/1260) `ClusterSettingsCollector.Update` recognizes uppercase byte units in disk watermarks | With `20GB`, `10GB` and `5GB`, the three watermark byte series were missing; now all three are exported; `TestClusterSettingsStats` failed before | 2026-10-21 |
+| [postgres_exporter](https://github.com/prometheus-community/postgres_exporter) | [#1419](https://github.com/prometheus-community/postgres_exporter/pull/1419) `pg_stat_activity_autovacuum_timestamp_seconds` adds `datname` and `schemaname` labels | Workers on `mob.datacdr` and `postpaid.datacdr` both got only `relname="datacdr"`; now `schemaname` keeps them apart | 2026-10-21 |
 | [helmfile](https://github.com/helmfile/helmfile) | [#2837](https://github.com/helmfile/helmfile/pull/2837) `skipSchemaValidation` distinguishes a release `false` from unset | With the default `true`, a release `false` still added `--skip-schema-validation`; now no flag; `TestAppendSkipSchemaValidationFlagToChartifyTemplateArgs` failed before | 2026-10-21 |
 | [OjG](https://github.com/ohler55/ojg) | [#266](https://github.com/ohler55/ojg/pull/266) `Nth.Append` renders the minimum array index with `strconv.AppendInt` | `$[-9223372036854775808]` rendered as `$[-'..--).0-*(+,))+(0(]`; now it stays `$[-9223372036854775808]`; `TestExprBuild`, `TestExprSet` and `TestExprDel` failed before | 2026-10-21 |
-| [franz-go](https://github.com/twmb/franz-go) | [#1507](https://github.com/twmb/franz-go/pull/1507) `Lag` builds its deduplicated group list without rewriting the caller's slice | The caller's `[a a b]` could come back as `[a b b]`; now it stays `[a a b]`; `TestLagDoesNotMutateInput` failed before | 2026-10-20 |
-| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5026](https://github.com/DNSControl/dnscontrol/pull/5026) BIND `GetZones` extracts zone names from `%f` and `%F` filenames | With `filenameformat` `db_%f`, `get-zones` printed `db_example.com`; now `example.com`; `Test_extractZonesFromFilenames` failed before | 2026-10-20 |
 
 ## Full record
 
