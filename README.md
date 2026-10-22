@@ -86,7 +86,7 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
 | [Dapr](https://github.com/dapr/dapr) | Runtime for distributed applications | 1 | 26.2k |
 | [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
 | [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 1 | 24.0k |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 4 | 20.5k |
+| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 5 | 20.5k |
 | [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
 | [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
 | [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
@@ -101,7 +101,7 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 11 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 9 | 601 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 10 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
 
 Star counts as of 2026-10-20.
@@ -123,10 +123,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6405](https://github.com/bluenviron/mediamtx/pull/6405) corrects `channelCount` for 7.1 MPEG-4 Audio tracks in the path API | Channel configuration 7 reported `"channelCount": 7`; now `"channelCount": 8` | 2026-10-22 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#324](https://github.com/facelessuser/soupsieve/pull/324) updates `:disabled` and `:enabled` for `option` and `optgroup` inside a disabled `select` | With `<select disabled>`, `option:disabled` returned `[]` and `option:enabled` returned the option; now the option and `[]` | 2026-10-22 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1128](https://github.com/burningalchemist/sql_exporter/pull/1128) applies `global` settings on reload | Reloading `scrape_timeout: 6s` to `2s` left `/config` at 6s and an unanswered scrape waiting 6.0 s; now 2s and 2.0 s | 2026-10-22 |
 | [cert-manager](https://github.com/cert-manager/cert-manager) | [#9488](https://github.com/cert-manager/cert-manager/pull/9488) `RequestMatchesSpec` names the correct postal code field | A postal code `12345` missing from the request reported `spec.subject.postCodes`; now `spec.subject.postalCodes` | 2026-10-21 |
-| [OjG](https://github.com/ohler55/ojg) | [#268](https://github.com/ohler55/ojg/pull/268) `FirstFound` handles reversed and empty ranges on Go slices and arrays | On `[]int{0,1,2,3,4}`, `[5:0:-1]` gave `(<nil>, false)`, now `(4, true)`; `[3:3]` gave `(3, true)`, now `(<nil>, false)` | 2026-10-21 |
-| [stern](https://github.com/stern/stern) | [#392](https://github.com/stern/stern/pull/392) `extjson` and `ppextjson` include `timestamp` with `--timestamps` | Log `2026-10-01T10:00:00.123456789Z hello` had no `timestamp`; now both formats include `"timestamp": "2026-10-01T10:00:00.123456789Z"` | 2026-10-21 |
-| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5027](https://github.com/DNSControl/dnscontrol/pull/5027) `LOC_BUILDER_DD` accepts zero coordinates and rejects missing ones | `x: 0, y: 0, alt: 0` errored, now creates a LOC record; `x: 51.5, alt: 0` without `y` became longitude 0, now errors | 2026-10-21 |
 
 ## Full record
 
