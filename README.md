@@ -11,7 +11,9 @@
   <a href="https://huggingface.co/spicysharkco"><img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face-spicysharkco-0a1626?style=for-the-badge"></a>
 </p>
 
-I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooling, robotics and OpenCV. I find a failure, fix it with a test where one fits, and measure what changed. More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
+Making the AI stack faster and harder to break, one merged fix at a time. Receipts below.
+
+More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
 ## Selected fixes
 
