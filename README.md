@@ -90,16 +90,18 @@ I send fixes upstream for what I run into: Kubernetes, LLM inference, data tooli
 | [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
 | [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
 | [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
+| [cert-manager](https://github.com/cert-manager/cert-manager) | TLS certificate automation for Kubernetes | 1 | 14.1k |
 | [redis-py](https://github.com/redis/redis-py) | Python client for Redis | 2 | 13.7k |
 | [Kubescape](https://github.com/kubescape/kubescape) | Kubernetes security scanner | 2 | 11.8k |
 | [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
-| [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 10 | 7.2k |
+| [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 11 | 7.2k |
 | [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
+| [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 6 | 4.0k |
 | [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 11 | 2.1k |
-| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 20 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 8 | 601 |
+| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 9 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
 
 Star counts as of 2026-10-20.
@@ -121,10 +123,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [Kamaji](https://github.com/clastix/kamaji) | [#1383](https://github.com/clastix/kamaji/pull/1383) `--zap-*` logger flags now take effect across commands | `manager --zap-log-level=error` printed 6 INFO lines; now 0 | 2026-10-21 |
-| [elasticsearch_exporter](https://github.com/prometheus-community/elasticsearch_exporter) | [#1260](https://github.com/prometheus-community/elasticsearch_exporter/pull/1260) `ClusterSettingsCollector.Update` recognizes uppercase byte units in disk watermarks | With `20GB`, `10GB` and `5GB`, the three watermark byte series were missing; now all three are exported; `TestClusterSettingsStats` failed before | 2026-10-21 |
-| [postgres_exporter](https://github.com/prometheus-community/postgres_exporter) | [#1419](https://github.com/prometheus-community/postgres_exporter/pull/1419) `pg_stat_activity_autovacuum_timestamp_seconds` adds `datname` and `schemaname` labels | Workers on `mob.datacdr` and `postpaid.datacdr` both got only `relname="datacdr"`; now `schemaname` keeps them apart | 2026-10-21 |
-| [helmfile](https://github.com/helmfile/helmfile) | [#2837](https://github.com/helmfile/helmfile/pull/2837) `skipSchemaValidation` distinguishes a release `false` from unset | With the default `true`, a release `false` still added `--skip-schema-validation`; now no flag; `TestAppendSkipSchemaValidationFlagToChartifyTemplateArgs` failed before | 2026-10-21 |
+| [cert-manager](https://github.com/cert-manager/cert-manager) | [#9488](https://github.com/cert-manager/cert-manager/pull/9488) `RequestMatchesSpec` names the correct postal code field | A postal code `12345` missing from the request reported `spec.subject.postCodes`; now `spec.subject.postalCodes` | 2026-10-21 |
+| [OjG](https://github.com/ohler55/ojg) | [#268](https://github.com/ohler55/ojg/pull/268) `FirstFound` handles reversed and empty ranges on Go slices and arrays | On `[]int{0,1,2,3,4}`, `[5:0:-1]` gave `(<nil>, false)`, now `(4, true)`; `[3:3]` gave `(3, true)`, now `(<nil>, false)` | 2026-10-21 |
+| [stern](https://github.com/stern/stern) | [#392](https://github.com/stern/stern/pull/392) `extjson` and `ppextjson` include `timestamp` with `--timestamps` | Log `2026-10-01T10:00:00.123456789Z hello` had no `timestamp`; now both formats include `"timestamp": "2026-10-01T10:00:00.123456789Z"` | 2026-10-21 |
+| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5027](https://github.com/DNSControl/dnscontrol/pull/5027) `LOC_BUILDER_DD` accepts zero coordinates and rejects missing ones | `x: 0, y: 0, alt: 0` errored, now creates a LOC record; `x: 51.5, alt: 0` without `y` became longitude 0, now errors | 2026-10-21 |
 
 ## Full record
 
