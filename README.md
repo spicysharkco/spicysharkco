@@ -88,13 +88,14 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Dapr](https://github.com/dapr/dapr) | Runtime for distributed applications | 1 | 26.2k |
 | [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
 | [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 1 | 24.0k |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 5 | 20.5k |
+| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 6 | 20.5k |
 | [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
 | [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
 | [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
 | [cert-manager](https://github.com/cert-manager/cert-manager) | TLS certificate automation for Kubernetes | 1 | 14.1k |
 | [redis-py](https://github.com/redis/redis-py) | Python client for Redis | 2 | 13.7k |
 | [Kubescape](https://github.com/kubescape/kubescape) | Kubernetes security scanner | 2 | 11.8k |
+| [PCL](https://github.com/PointCloudLibrary/pcl) | 3D point cloud processing in C++ | 1 | 11.2k |
 | [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
 | [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 11 | 7.2k |
 | [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
@@ -103,8 +104,10 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 11 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 10 | 601 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 12 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 5 | 271 |
+| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 5 | 169 |
 
 Star counts as of 2026-10-20.
 
@@ -125,10 +128,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator) | [#8906](https://github.com/prometheus-operator/prometheus-operator/pull/8906) rejects `AlertmanagerConfig` Webex receivers without credentials in the CRD | A Webex receiver with neither `httpConfig.authorization` nor `httpConfig.bearerTokenSecret` passed the API server and only failed the operator's own check; now the API server rejects it with `httpConfig.authorization or httpConfig.bearerTokenSecret is required` | 2026-10-22 |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6405](https://github.com/bluenviron/mediamtx/pull/6405) corrects `channelCount` for 7.1 MPEG-4 Audio tracks in the path API | Channel configuration 7 reported `"channelCount": 7`; now `"channelCount": 8` | 2026-10-22 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#324](https://github.com/facelessuser/soupsieve/pull/324) updates `:disabled` and `:enabled` for `option` and `optgroup` inside a disabled `select` | With `<select disabled>`, `option:disabled` returned `[]` and `option:enabled` returned the option; now the option and `[]` | 2026-10-22 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1128](https://github.com/burningalchemist/sql_exporter/pull/1128) applies `global` settings on reload | Reloading `scrape_timeout: 6s` to `2s` left `/config` at 6s and an unanswered scrape waiting 6.0 s; now 2s and 2.0 s | 2026-10-22 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1130](https://github.com/burningalchemist/sql_exporter/pull/1130) startup warmup treats `scrape_timeout: 0s` as no timeout | Warmup skipped every target with `context deadline exceeded`, so the first scrape ran all collectors cold; now the warmup runs them | 2026-10-22 |
+| [pyjson5](https://github.com/dpranke/pyjson5) | [#128](https://github.com/dpranke/pyjson5/pull/128) quotes identifier keys above U+FFFF with `ensure_ascii=True` | `json5.dumps({'\U0001d49c': 1})` gave `{\ud835\udc9c: 1}`; now `{"\ud835\udc9c": 1}` | 2026-10-22 |
+| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6406](https://github.com/bluenviron/mediamtx/pull/6406) corrects 7.1 MPEG-4 Audio channel counts in MoQ | A 7.1 track advertised `"channels": 7`, now `"channels": 8`; incoming 8 channels used configuration 8, now 7 | 2026-10-22 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#325](https://github.com/facelessuser/soupsieve/pull/325) updates `:default` for buttons with missing or invalid `type` and `type="image"` inputs | With a `<button>` without `type` before a submit `<input>`, `:default` returned the input; now the button | 2026-10-22 |
 
 ## Full record
 
