@@ -123,10 +123,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator) | [#8906](https://github.com/prometheus-operator/prometheus-operator/pull/8906) rejects `AlertmanagerConfig` Webex receivers without credentials in the CRD | A Webex receiver with neither `httpConfig.authorization` nor `httpConfig.bearerTokenSecret` passed the API server and only failed the operator's own check; now the API server rejects it with `httpConfig.authorization or httpConfig.bearerTokenSecret is required` | 2026-10-22 |
 | [mediamtx](https://github.com/bluenviron/mediamtx) | [#6405](https://github.com/bluenviron/mediamtx/pull/6405) corrects `channelCount` for 7.1 MPEG-4 Audio tracks in the path API | Channel configuration 7 reported `"channelCount": 7`; now `"channelCount": 8` | 2026-10-22 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#324](https://github.com/facelessuser/soupsieve/pull/324) updates `:disabled` and `:enabled` for `option` and `optgroup` inside a disabled `select` | With `<select disabled>`, `option:disabled` returned `[]` and `option:enabled` returned the option; now the option and `[]` | 2026-10-22 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1128](https://github.com/burningalchemist/sql_exporter/pull/1128) applies `global` settings on reload | Reloading `scrape_timeout: 6s` to `2s` left `/config` at 6s and an unanswered scrape waiting 6.0 s; now 2s and 2.0 s | 2026-10-22 |
-| [cert-manager](https://github.com/cert-manager/cert-manager) | [#9488](https://github.com/cert-manager/cert-manager/pull/9488) `RequestMatchesSpec` names the correct postal code field | A postal code `12345` missing from the request reported `spec.subject.postCodes`; now `spec.subject.postalCodes` | 2026-10-21 |
 
 ## Full record
 
