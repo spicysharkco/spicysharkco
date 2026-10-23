@@ -105,8 +105,8 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 12 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 13 | 601 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 5 | 271 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 6 | 295 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 6 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
 
 Star counts as of 2026-10-20.
@@ -128,10 +128,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1131](https://github.com/burningalchemist/sql_exporter/pull/1131) `no_prepared_statement: true` on a metric now also applies when the metric uses `query_ref` | The referenced query was still prepared when none was cached; now it runs unprepared, as a literal query already did | 2026-10-23 |
-| [ColorAide](https://github.com/facelessuser/coloraide) | [#533](https://github.com/facelessuser/coloraide/pull/533) a CSS color with two channels before the alpha slash is rejected | `rgb(1 2 / 0.5)` was read as `rgb(1 2 0.5)` with alpha 1; now it raises `ValueError`, like `rgb(128 0)` | 2026-10-23 |
-| [Kamaji](https://github.com/clastix/kamaji) | [#1389](https://github.com/clastix/kamaji/pull/1389) removing `spec.dataStoreOverrides` also removes the kube-apiserver override flag | The flag `--etcd-servers-overrides=/events#...` stayed, so `/events` kept using the removed DataStore; now it is dropped | 2026-10-23 |
-| [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | [#3007](https://github.com/facelessuser/pymdown-extensions/pull/3007) BracketSpan no longer turns the colon of `{: ...}` into an attribute | `[text]{: .cls}` gave `<span :=":" class="cls">`; now `<span class="cls">` | 2026-10-23 |
+| [ColorAide](https://github.com/facelessuser/coloraide) | [#535](https://github.com/facelessuser/coloraide/pull/535) `shorter` hue interpolation keeps the short arc across an undefined hue after a hue wraps | `continuous` over `hsl(355 ...)`, `hsl(5 ...)`, `hsl(none ...)`, `hsl(105 ...)` gave hue `300.0` at the midpoint; now `390.0` | 2026-10-23 |
+| [oras-go](https://github.com/oras-project/oras-go) | [#1670](https://github.com/oras-project/oras-go/pull/1670) `Verify` reports blobs missing under a referrer's subject that is present but not in `index.json` | A lost layer of that subject left `Missing` empty; now the layer is listed | 2026-10-23 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#328](https://github.com/facelessuser/soupsieve/pull/328) `[attr!=value]` no longer rejects values that only start with `value` | `td[class!="c"]` skipped `class="center"`; now it matches, like `:not([class="c"])` | 2026-10-23 |
+| [bracex](https://github.com/facelessuser/bracex) | [#53](https://github.com/facelessuser/bracex/pull/53) a `${...}` inside a brace group no longer ends the group | `expand('{a,${b}}')` gave `['a}', '${b}']`; now `['a', '${b}']` | 2026-10-23 |
 
 ## Full record
 
