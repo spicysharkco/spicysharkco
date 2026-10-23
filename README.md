@@ -102,9 +102,9 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 6 | 4.0k |
 | [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
-| [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 12 | 2.1k |
-| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 13 | 601 |
+| [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
+| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 24 | 956 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 14 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 7 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 6 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
@@ -119,19 +119,19 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [Kubeflow Trainer](https://github.com/kubeflow/trainer) | [#4255](https://github.com/kubeflow/trainer/pull/4255) TorchTune validation reads the node count a TrainJob inherits from its runtime | A LoRA TrainJob on a two-node custom runtime passed admission, then ran the full multi-node fine-tune recipe; now admission rejects it | 2026-10-23 |
 | [llm-d-router](https://github.com/llm-d/llm-d-router) | [#3476](https://github.com/llm-d/llm-d-router/pull/3476) `autoTune` per-pod LRU capacity is now sized in router blocks, not engine blocks | 31250 engine blocks of 16 tokens gave a 31250-entry LRU, now 7812 entries of 64 tokens; `TestMakeserver_AutotuneCapacityInRouterBlocks` failed before | 2026-10-20 |
 | [AIBrix](https://github.com/vllm-project/aibrix) | [#3174](https://github.com/vllm-project/aibrix/pull/3174) `PodAutoscaler` `scalingStrategy` is immutable | Changing the strategy in place left the old HPA scaling the target next to the new scaler; the change is now rejected | 2026-10-20 |
 | [Xinference](https://github.com/xorbitsai/inference) | [#5756](https://github.com/xorbitsai/inference/pull/5756) a streamed reasoning reply keeps a later `</think>` in the answer as content | Chunks `a`, `</think>`, `b`, `</think>`, `c` gave `content` `"bc"`; now `"b</think>c"` | 2026-10-19 |
-| [llm-d-inference-sim](https://github.com/llm-d/llm-d-inference-sim) | [#802](https://github.com/llm-d/llm-d-inference-sim/pull/802) a failed dataset download no longer leaves an empty file at `--dataset-path` | After a 503 the next start skipped the download and stayed blocked; now it retries; both new test cases failed before | 2026-10-19 |
 
 ### Infrastructure
 
 | Project | Change | Result | Date |
 |---|---|---|---|
 | [oras-go](https://github.com/oras-project/oras-go) | [#1674](https://github.com/oras-project/oras-go/pull/1674) `Store.Add` on a symlink to a directory archives the directory's files | The archive held one symlink entry, and pushing it into another file store failed with `is outside of`; now it holds the files | 2026-10-23 |
-| [ColorAide](https://github.com/facelessuser/coloraide) | [#535](https://github.com/facelessuser/coloraide/pull/535) `shorter` hue interpolation keeps the short arc across an undefined hue after a hue wraps | `continuous` over `hsl(355 ...)`, `hsl(5 ...)`, `hsl(none ...)`, `hsl(105 ...)` gave hue `300.0` at the midpoint; now `390.0` | 2026-10-23 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#328](https://github.com/facelessuser/soupsieve/pull/328) `[attr!=value]` no longer rejects values that only start with `value` | `td[class!="c"]` skipped `class="center"`; now it matches, like `:not([class="c"])` | 2026-10-23 |
-| [bracex](https://github.com/facelessuser/bracex) | [#53](https://github.com/facelessuser/bracex/pull/53) a `${...}` inside a brace group no longer ends the group | `expand('{a,${b}}')` gave `['a}', '${b}']`; now `['a', '${b}']` | 2026-10-23 |
+| [fsspec](https://github.com/fsspec/filesystem_spec) | [#2295](https://github.com/fsspec/filesystem_spec/pull/2295) a failed `sync()` call no longer keeps its frames alive in a reference cycle | 20 failed `pipe_file` calls of 8 MiB each kept about 160 MiB with the cyclic collector off; now none | 2026-10-23 |
+| [backrefs](https://github.com/facelessuser/backrefs) | [#206](https://github.com/facelessuser/backrefs/pull/206) a case escape before a hex escape above `0xFF` gives the right character | `\c\xb5` gave `'s4'` and `\C\xff\E` raised `re.error`; now `'\u039c'` and `'\u0178'` | 2026-10-23 |
+| [pyjson5](https://github.com/dpranke/pyjson5) | [#132](https://github.com/dpranke/pyjson5/pull/132) `dumps` escapes DEL when `ensure_ascii` is true, as `json.dumps` does | `json5.dumps('\x7f', quote_keys=True, trailing_commas=False)` wrote a raw DEL; now `\u007f`, the same text as `json.dumps` | 2026-10-23 |
 
 ## Full record
 
