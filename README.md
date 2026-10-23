@@ -128,10 +128,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [ColorAide](https://github.com/facelessuser/coloraide) | [#533](https://github.com/facelessuser/coloraide/pull/533) a CSS color with two channels before the alpha slash is rejected | `rgb(1 2 / 0.5)` was read as `rgb(1 2 0.5)` with alpha 1; now it raises `ValueError`, like `rgb(128 0)` | 2026-10-23 |
 | [Kamaji](https://github.com/clastix/kamaji) | [#1389](https://github.com/clastix/kamaji/pull/1389) removing `spec.dataStoreOverrides` also removes the kube-apiserver override flag | The flag `--etcd-servers-overrides=/events#...` stayed, so `/events` kept using the removed DataStore; now it is dropped | 2026-10-23 |
 | [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | [#3007](https://github.com/facelessuser/pymdown-extensions/pull/3007) BracketSpan no longer turns the colon of `{: ...}` into an attribute | `[text]{: .cls}` gave `<span :=":" class="cls">`; now `<span class="cls">` | 2026-10-23 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | [#252](https://github.com/facelessuser/wcmatch/pull/252) `kill()` from a directory hook stops the walk before that directory's files | `kill()` in `on_validate_directory` still returned `['root/b.txt']`; now `[]` | 2026-10-23 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1130](https://github.com/burningalchemist/sql_exporter/pull/1130) startup warmup treats `scrape_timeout: 0s` as no timeout | Warmup skipped every target with `context deadline exceeded`, so the first scrape ran all collectors cold; now the warmup runs them | 2026-10-22 |
 
 ## Full record
 
