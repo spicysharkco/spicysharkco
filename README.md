@@ -128,7 +128,7 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | [#3006](https://github.com/facelessuser/pymdown-extensions/pull/3006) FancyLists keeps `i` and `I` in alphabetical lists after a blank line | `h. one`, a blank line, then `i. two` rendered two lists, the second one Roman; now one alphabetical list | 2026-10-23 |
+| [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | [#3007](https://github.com/facelessuser/pymdown-extensions/pull/3007) BracketSpan no longer turns the colon of `{: ...}` into an attribute | `[text]{: .cls}` gave `<span :=":" class="cls">`; now `<span class="cls">` | 2026-10-23 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | [#252](https://github.com/facelessuser/wcmatch/pull/252) `kill()` from a directory hook stops the walk before that directory's files | `kill()` in `on_validate_directory` still returned `['root/b.txt']`; now `[]` | 2026-10-23 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1130](https://github.com/burningalchemist/sql_exporter/pull/1130) startup warmup treats `scrape_timeout: 0s` as no timeout | Warmup skipped every target with `context deadline exceeded`, so the first scrape ran all collectors cold; now the warmup runs them | 2026-10-22 |
 | [pyjson5](https://github.com/dpranke/pyjson5) | [#128](https://github.com/dpranke/pyjson5/pull/128) quotes identifier keys above U+FFFF with `ensure_ascii=True` | `json5.dumps({'\U0001d49c': 1})` gave `{\ud835\udc9c: 1}`; now `{"\ud835\udc9c": 1}` | 2026-10-22 |
