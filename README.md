@@ -128,7 +128,7 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [oras-go](https://github.com/oras-project/oras-go) | [#1674](https://github.com/oras-project/oras-go/pull/1674) `Store.Add` on a symlink to a directory archives the directory's files | The archive held one symlink entry, and pushing it into another file store failed with `is outside of`; now it holds the files | 2026-10-23 |
+| [oras-go](https://github.com/oras-project/oras-go) | [#1679](https://github.com/oras-project/oras-go/pull/1679) a file store unpacks a directory artifact that holds a read-only directory | Unpacking stopped with `permission denied` at the first entry under that directory; now it unpacks and the directory keeps its mode | 2026-10-23 |
 | [fsspec](https://github.com/fsspec/filesystem_spec) | [#2295](https://github.com/fsspec/filesystem_spec/pull/2295) a failed `sync()` call no longer keeps its frames alive in a reference cycle | 20 failed `pipe_file` calls of 8 MiB each kept about 160 MiB with the cyclic collector off; now none | 2026-10-23 |
 | [backrefs](https://github.com/facelessuser/backrefs) | [#206](https://github.com/facelessuser/backrefs/pull/206) a case escape before a hex escape above `0xFF` gives the right character | `\c\xb5` gave `'s4'` and `\C\xff\E` raised `re.error`; now `'\u039c'` and `'\u0178'` | 2026-10-23 |
 | [pyjson5](https://github.com/dpranke/pyjson5) | [#132](https://github.com/dpranke/pyjson5/pull/132) `dumps` escapes DEL when `ensure_ascii` is true, as `json.dumps` does | `json5.dumps('\x7f', quote_keys=True, trailing_commas=False)` wrote a raw DEL; now `\u007f`, the same text as `json.dumps` | 2026-10-23 |
