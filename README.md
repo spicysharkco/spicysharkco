@@ -107,7 +107,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 12 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 5 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 5 | 271 |
-| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 5 | 169 |
+| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
 
 Star counts as of 2026-10-20.
 
@@ -128,10 +128,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | [#3006](https://github.com/facelessuser/pymdown-extensions/pull/3006) FancyLists keeps `i` and `I` in alphabetical lists after a blank line | `h. one`, a blank line, then `i. two` rendered two lists, the second one Roman; now one alphabetical list | 2026-10-23 |
+| [wcmatch](https://github.com/facelessuser/wcmatch) | [#252](https://github.com/facelessuser/wcmatch/pull/252) `kill()` from a directory hook stops the walk before that directory's files | `kill()` in `on_validate_directory` still returned `['root/b.txt']`; now `[]` | 2026-10-23 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1130](https://github.com/burningalchemist/sql_exporter/pull/1130) startup warmup treats `scrape_timeout: 0s` as no timeout | Warmup skipped every target with `context deadline exceeded`, so the first scrape ran all collectors cold; now the warmup runs them | 2026-10-22 |
 | [pyjson5](https://github.com/dpranke/pyjson5) | [#128](https://github.com/dpranke/pyjson5/pull/128) quotes identifier keys above U+FFFF with `ensure_ascii=True` | `json5.dumps({'\U0001d49c': 1})` gave `{\ud835\udc9c: 1}`; now `{"\ud835\udc9c": 1}` | 2026-10-22 |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6406](https://github.com/bluenviron/mediamtx/pull/6406) corrects 7.1 MPEG-4 Audio channel counts in MoQ | A 7.1 track advertised `"channels": 7`, now `"channels": 8`; incoming 8 channels used configuration 8, now 7 | 2026-10-22 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#325](https://github.com/facelessuser/soupsieve/pull/325) updates `:default` for buttons with missing or invalid `type` and `type="image"` inputs | With a `<button>` without `type` before a submit `<input>`, `:default` returned the input; now the button | 2026-10-22 |
 
 ## Full record
 
