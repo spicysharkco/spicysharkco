@@ -105,7 +105,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 12 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 22 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 13 | 601 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 6 | 295 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 7 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 6 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
 
@@ -128,8 +128,8 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [oras-go](https://github.com/oras-project/oras-go) | [#1674](https://github.com/oras-project/oras-go/pull/1674) `Store.Add` on a symlink to a directory archives the directory's files | The archive held one symlink entry, and pushing it into another file store failed with `is outside of`; now it holds the files | 2026-10-23 |
 | [ColorAide](https://github.com/facelessuser/coloraide) | [#535](https://github.com/facelessuser/coloraide/pull/535) `shorter` hue interpolation keeps the short arc across an undefined hue after a hue wraps | `continuous` over `hsl(355 ...)`, `hsl(5 ...)`, `hsl(none ...)`, `hsl(105 ...)` gave hue `300.0` at the midpoint; now `390.0` | 2026-10-23 |
-| [oras-go](https://github.com/oras-project/oras-go) | [#1670](https://github.com/oras-project/oras-go/pull/1670) `Verify` reports blobs missing under a referrer's subject that is present but not in `index.json` | A lost layer of that subject left `Missing` empty; now the layer is listed | 2026-10-23 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#328](https://github.com/facelessuser/soupsieve/pull/328) `[attr!=value]` no longer rejects values that only start with `value` | `td[class!="c"]` skipped `class="center"`; now it matches, like `:not([class="c"])` | 2026-10-23 |
 | [bracex](https://github.com/facelessuser/bracex) | [#53](https://github.com/facelessuser/bracex/pull/53) a `${...}` inside a brace group no longer ends the group | `expand('{a,${b}}')` gave `['a}', '${b}']`; now `['a', '${b}']` | 2026-10-23 |
 
