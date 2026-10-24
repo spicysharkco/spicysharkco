@@ -105,7 +105,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 15 | 601 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 7 | 295 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 9 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 6 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
 
