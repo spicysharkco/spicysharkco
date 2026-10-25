@@ -100,7 +100,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
 | [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 11 | 7.2k |
 | [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
-| [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 6 | 4.0k |
+| [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 8 | 4.0k |
 | [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 2 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
@@ -129,10 +129,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [DNSControl](https://github.com/DNSControl/dnscontrol) | [#5034](https://github.com/DNSControl/dnscontrol/pull/5034) `D_EXTEND()` ignores the empty tag on either name, since `example.com` and `example.com!` are documented as the same | `D("example.com!")` with `D_EXTEND("sub.example.com")` put `www` at `www.su`, and the reverse made `dnscontrol check` panic; now both give `www.sub` | 2026-10-25 |
 | [oras-go](https://github.com/oras-project/oras-go) | [#1719](https://github.com/oras-project/oras-go/pull/1719) the credentials file store reads a `config.json` that holds `null` as an empty config | `NewFileStore` on such a file, then `Put`, panicked with `assignment to entry in nil map`; now `Put` writes the same bytes as on a missing file, and docker/cli also loads it as empty | 2026-10-25 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#330](https://github.com/facelessuser/soupsieve/pull/330) `:lang()` stops at an element with an empty `lang` instead of taking an ancestor's language | `p:lang(de)` matched a `<p lang="">` inside `<div lang="de">`; now it does not, as in Chrome 155, Firefox 158 and Safari 26.6 | 2026-10-25 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1138](https://github.com/burningalchemist/sql_exporter/pull/1138) a secret reference given with `-config.data-source-name` is resolved at startup, as one in the configuration file is | `-config.data-source-name='k8ssecret://ns/name?key=dsn'` started, then the first scrape failed with `invalid URL`; now the reference is resolved before the first scrape | 2026-10-25 |
-| [wcmatch](https://github.com/facelessuser/wcmatch) | [#253](https://github.com/facelessuser/wcmatch/pull/253) a `?` or `[...]` after a leading `*` no longer matches the dot of a hidden name, as the docs say | `glob.glob('*[._]env')` returned `.env` along with `prod.env` and `prod_env`; now it skips `.env`, as `?a`, `fnmatch` and Bash 5.3 do | 2026-10-25 |
 
 ## Full record
 
