@@ -89,7 +89,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
 | [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 1 | 24.0k |
 | [ONNX](https://github.com/onnx/onnx) | Open standard for machine learning models | 1 | 21.6k |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 6 | 20.5k |
+| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 7 | 20.5k |
 | [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
 | [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
 | [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
@@ -129,10 +129,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6414](https://github.com/bluenviron/mediamtx/pull/6414) an 8-channel AAC always-available track accepts a 7.1 publisher | The track asked for channel configuration 8, which is reserved, so a 7.1 AAC publisher (configuration 7) was refused with `MPEG-4 audio configuration does not match`; now it is accepted | 2026-10-25 |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | [#2201](https://github.com/cloudnativelabs/kube-router/pull/2201) two services whose namespace, name and port name join to the same string no longer share one service ID | Service `web` with port `http-alt` and service `web-http` with port `alt` both got `default-web-http-alt`, so the service map kept one and the endpoint map merged both; now each keeps its own | 2026-10-25 |
 | [iceberg-rust](https://github.com/apache/iceberg-rust) | [#3476](https://github.com/apache/iceberg-rust/pull/3476) a float partition value or `Datum` read from JSON narrows a double to the nearest `f32`, as iceberg-java does | `100.1` and `123.456` failed with `type mismatch`; now both read, and a reviewer's check against iceberg-java matched on about 600k inputs | 2026-10-24 |
 | [oras-go](https://github.com/oras-project/oras-go) | [#1679](https://github.com/oras-project/oras-go/pull/1679) a file store unpacks a directory artifact that holds a read-only directory | Unpacking stopped with `permission denied` at the first entry under that directory; now it unpacks and the directory keeps its mode | 2026-10-23 |
-| [fsspec](https://github.com/fsspec/filesystem_spec) | [#2295](https://github.com/fsspec/filesystem_spec/pull/2295) a failed `sync()` call no longer keeps its frames alive in a reference cycle | 20 failed `pipe_file` calls of 8 MiB each kept about 160 MiB with the cyclic collector off; now none | 2026-10-23 |
 
 ## Full record
 
