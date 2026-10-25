@@ -88,6 +88,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Dapr](https://github.com/dapr/dapr) | Runtime for distributed applications | 1 | 26.2k |
 | [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
 | [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 1 | 24.0k |
+| [ONNX](https://github.com/onnx/onnx) | Open standard for machine learning models | 1 | 21.6k |
 | [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 6 | 20.5k |
 | [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
 | [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 1 | 14.5k |
@@ -119,10 +120,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [ONNX](https://github.com/onnx/onnx) | [#8629](https://github.com/onnx/onnx/pull/8629) the reference `Shape` clamps an `end` below `-rank` to an empty result, as the spec says | `Shape(end=-4)` on a 2x3x4 input gave `[2 3]`; now `[]` | 2026-10-25 |
 | [Kubeflow Trainer](https://github.com/kubeflow/trainer) | [#4255](https://github.com/kubeflow/trainer/pull/4255) TorchTune validation reads the node count a TrainJob inherits from its runtime | A LoRA TrainJob on a two-node custom runtime passed admission, then ran the full multi-node fine-tune recipe; now admission rejects it | 2026-10-23 |
 | [llm-d-router](https://github.com/llm-d/llm-d-router) | [#3476](https://github.com/llm-d/llm-d-router/pull/3476) `autoTune` per-pod LRU capacity is now sized in router blocks, not engine blocks | 31250 engine blocks of 16 tokens gave a 31250-entry LRU, now 7812 entries of 64 tokens; `TestMakeserver_AutotuneCapacityInRouterBlocks` failed before | 2026-10-20 |
 | [AIBrix](https://github.com/vllm-project/aibrix) | [#3174](https://github.com/vllm-project/aibrix/pull/3174) `PodAutoscaler` `scalingStrategy` is immutable | Changing the strategy in place left the old HPA scaling the target next to the new scaler; the change is now rejected | 2026-10-20 |
-| [Xinference](https://github.com/xorbitsai/inference) | [#5756](https://github.com/xorbitsai/inference/pull/5756) a streamed reasoning reply keeps a later `</think>` in the answer as content | Chunks `a`, `</think>`, `b`, `</think>`, `c` gave `content` `"bc"`; now `"b</think>c"` | 2026-10-19 |
 
 ### Infrastructure
 
