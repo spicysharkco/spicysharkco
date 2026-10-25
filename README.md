@@ -101,7 +101,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
 | [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 6 | 4.0k |
 | [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
-| [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 1 | 2.5k |
+| [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 2 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 16 | 601 |
@@ -128,10 +128,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [kube-router](https://github.com/cloudnativelabs/kube-router) | [#2201](https://github.com/cloudnativelabs/kube-router/pull/2201) two services whose namespace, name and port name join to the same string no longer share one service ID | Service `web` with port `http-alt` and service `web-http` with port `alt` both got `default-web-http-alt`, so the service map kept one and the endpoint map merged both; now each keeps its own | 2026-10-25 |
 | [iceberg-rust](https://github.com/apache/iceberg-rust) | [#3476](https://github.com/apache/iceberg-rust/pull/3476) a float partition value or `Datum` read from JSON narrows a double to the nearest `f32`, as iceberg-java does | `100.1` and `123.456` failed with `type mismatch`; now both read, and a reviewer's check against iceberg-java matched on about 600k inputs | 2026-10-24 |
 | [oras-go](https://github.com/oras-project/oras-go) | [#1679](https://github.com/oras-project/oras-go/pull/1679) a file store unpacks a directory artifact that holds a read-only directory | Unpacking stopped with `permission denied` at the first entry under that directory; now it unpacks and the directory keeps its mode | 2026-10-23 |
 | [fsspec](https://github.com/fsspec/filesystem_spec) | [#2295](https://github.com/fsspec/filesystem_spec/pull/2295) a failed `sync()` call no longer keeps its frames alive in a reference cycle | 20 failed `pipe_file` calls of 8 MiB each kept about 160 MiB with the cyclic collector off; now none | 2026-10-23 |
-| [backrefs](https://github.com/facelessuser/backrefs) | [#206](https://github.com/facelessuser/backrefs/pull/206) a case escape before a hex escape above `0xFF` gives the right character | `\c\xb5` gave `'s4'` and `\C\xff\E` raised `re.error`; now `'\u039c'` and `'\u0178'` | 2026-10-23 |
 
 ## Full record
 
