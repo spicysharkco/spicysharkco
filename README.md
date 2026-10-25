@@ -106,7 +106,7 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 17 | 601 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 14 | 295 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 15 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 8 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 7 | 169 |
 
@@ -129,7 +129,7 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [oras-go](https://github.com/oras-project/oras-go) | [#1718](https://github.com/oras-project/oras-go/pull/1718) a reference with both a tag and a digest has its tag checked | `NewReference("localhost:5000/repo:bad tag@sha256:<digest>")` returned no error and the tag `bad tag`; now it rejects the tag, as it does without the digest | 2026-10-25 |
+| [oras-go](https://github.com/oras-project/oras-go) | [#1719](https://github.com/oras-project/oras-go/pull/1719) the credentials file store reads a `config.json` that holds `null` as an empty config | `NewFileStore` on such a file, then `Put`, panicked with `assignment to entry in nil map`; now `Put` writes the same bytes as on a missing file, and docker/cli also loads it as empty | 2026-10-25 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#330](https://github.com/facelessuser/soupsieve/pull/330) `:lang()` stops at an element with an empty `lang` instead of taking an ancestor's language | `p:lang(de)` matched a `<p lang="">` inside `<div lang="de">`; now it does not, as in Chrome 155, Firefox 158 and Safari 26.6 | 2026-10-25 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1138](https://github.com/burningalchemist/sql_exporter/pull/1138) a secret reference given with `-config.data-source-name` is resolved at startup, as one in the configuration file is | `-config.data-source-name='k8ssecret://ns/name?key=dsn'` started, then the first scrape failed with `invalid URL`; now the reference is resolved before the first scrape | 2026-10-25 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | [#253](https://github.com/facelessuser/wcmatch/pull/253) a `?` or `[...]` after a leading `*` no longer matches the dot of a hidden name, as the docs say | `glob.glob('*[._]env')` returned `.env` along with `prod.env` and `prod_env`; now it skips `.env`, as `?a`, `fnmatch` and Bash 5.3 do | 2026-10-25 |
