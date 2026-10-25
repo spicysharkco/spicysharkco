@@ -106,9 +106,9 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
 | [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 16 | 601 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 11 | 295 |
+| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 12 | 295 |
 | [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 6 | 271 |
-| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 6 | 169 |
+| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 7 | 169 |
 
 Star counts as of 2026-10-20.
 
@@ -129,10 +129,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
-| [oras-go](https://github.com/oras-project/oras-go) | [#1714](https://github.com/oras-project/oras-go/pull/1714) a registries.conf repository prefix now applies to digest references, as containers-registries.conf(5) says | A prefix entry's mirror, `insecure` and `blocked` settings were skipped for `repo@sha256:...` references; now they apply as they do for tags | 2026-10-25 |
+| [wcmatch](https://github.com/facelessuser/wcmatch) | [#253](https://github.com/facelessuser/wcmatch/pull/253) a `?` or `[...]` after a leading `*` no longer matches the dot of a hidden name, as the docs say | `glob.glob('*[._]env')` returned `.env` along with `prod.env` and `prod_env`; now it skips `.env`, as `?a`, `fnmatch` and Bash 5.3 do | 2026-10-25 |
+| [oras-go](https://github.com/oras-project/oras-go) | [#1715](https://github.com/oras-project/oras-go/pull/1715) `ParseReference` no longer reads a rejected digest reference to another repository as a bare digest | On `localhost:5000/repo`, `other.example/Other@sha256:<digest>` returned this repository's digest with no error; now it returns `invalid reference`, as the same reference with a tag did | 2026-10-25 |
 | [mediamtx](https://github.com/bluenviron/mediamtx) | [#6414](https://github.com/bluenviron/mediamtx/pull/6414) an 8-channel AAC always-available track accepts a 7.1 publisher | The track asked for channel configuration 8, which is reserved, so a 7.1 AAC publisher (configuration 7) was refused with `MPEG-4 audio configuration does not match`; now it is accepted | 2026-10-25 |
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | [#2201](https://github.com/cloudnativelabs/kube-router/pull/2201) two services whose namespace, name and port name join to the same string no longer share one service ID | Service `web` with port `http-alt` and service `web-http` with port `alt` both got `default-web-http-alt`, so the service map kept one and the endpoint map merged both; now each keeps its own | 2026-10-25 |
-| [iceberg-rust](https://github.com/apache/iceberg-rust) | [#3476](https://github.com/apache/iceberg-rust/pull/3476) a float partition value or `Datum` read from JSON narrows a double to the nearest `f32`, as iceberg-java does | `100.1` and `123.456` failed with `type mismatch`; now both read, and a reviewer's check against iceberg-java matched on about 600k inputs | 2026-10-24 |
 
 ## Full record
 
