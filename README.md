@@ -120,10 +120,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [llmfit](https://github.com/AlexsJones/llmfit) | [#1169](https://github.com/AlexsJones/llmfit/pull/1169) usable context under MoE offload charges only the active experts held in VRAM | A 6 GiB GPU rated Qwen3-30B-A3B at Q8_0 Good with no room left for context (`40k→0`); now `40k→25k` | 2026-10-25 |
 | [ONNX](https://github.com/onnx/onnx) | [#8629](https://github.com/onnx/onnx/pull/8629) the reference `Shape` clamps an `end` below `-rank` to an empty result, as the spec says | `Shape(end=-4)` on a 2x3x4 input gave `[2 3]`; now `[]` | 2026-10-25 |
 | [Kubeflow Trainer](https://github.com/kubeflow/trainer) | [#4255](https://github.com/kubeflow/trainer/pull/4255) TorchTune validation reads the node count a TrainJob inherits from its runtime | A LoRA TrainJob on a two-node custom runtime passed admission, then ran the full multi-node fine-tune recipe; now admission rejects it | 2026-10-23 |
 | [llm-d-router](https://github.com/llm-d/llm-d-router) | [#3476](https://github.com/llm-d/llm-d-router/pull/3476) `autoTune` per-pod LRU capacity is now sized in router blocks, not engine blocks | 31250 engine blocks of 16 tokens gave a 31250-entry LRU, now 7812 entries of 64 tokens; `TestMakeserver_AutotuneCapacityInRouterBlocks` failed before | 2026-10-20 |
-| [AIBrix](https://github.com/vllm-project/aibrix) | [#3174](https://github.com/vllm-project/aibrix/pull/3174) `PodAutoscaler` `scalingStrategy` is immutable | Changing the strategy in place left the old HPA scaling the target next to the new scaler; the change is now rejected | 2026-10-20 |
 
 ### Infrastructure
 
