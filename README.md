@@ -105,9 +105,9 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 | [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 2 | 2.5k |
 | [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
 | [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 16 | 601 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 17 | 601 |
 | [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 13 | 295 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 7 | 271 |
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 8 | 271 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 7 | 169 |
 
 Star counts as of 2026-10-20.
@@ -129,10 +129,10 @@ Newest first, one per project.
 
 | Project | Change | Result | Date |
 |---|---|---|---|
+| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#330](https://github.com/facelessuser/soupsieve/pull/330) `:lang()` stops at an element with an empty `lang` instead of taking an ancestor's language | `p:lang(de)` matched a `<p lang="">` inside `<div lang="de">`; now it does not, as in Chrome 155, Firefox 158 and Safari 26.6 | 2026-10-25 |
+| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | [#1138](https://github.com/burningalchemist/sql_exporter/pull/1138) a secret reference given with `-config.data-source-name` is resolved at startup, as one in the configuration file is | `-config.data-source-name='k8ssecret://ns/name?key=dsn'` started, then the first scrape failed with `invalid URL`; now the reference is resolved before the first scrape | 2026-10-25 |
 | [oras-go](https://github.com/oras-project/oras-go) | [#1716](https://github.com/oras-project/oras-go/pull/1716) the credentials file store saves through a symlinked `config.json` instead of replacing the link | `Put` and `Delete` on a `config.json` linked to a file in another directory replaced the link with a regular file and left the target unchanged; now they write the target, as docker/cli does | 2026-10-25 |
 | [wcmatch](https://github.com/facelessuser/wcmatch) | [#253](https://github.com/facelessuser/wcmatch/pull/253) a `?` or `[...]` after a leading `*` no longer matches the dot of a hidden name, as the docs say | `glob.glob('*[._]env')` returned `.env` along with `prod.env` and `prod_env`; now it skips `.env`, as `?a`, `fnmatch` and Bash 5.3 do | 2026-10-25 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | [#331](https://github.com/facelessuser/soupsieve/pull/331) `:dir()` reads the value of an `input` with `dir="auto"` and a missing or empty `type`, as it does for `type="text"` | A right-to-left value gave `ltr` with no `type` or `type=""`; now it gives `rtl`, as Chrome does | 2026-10-25 |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6414](https://github.com/bluenviron/mediamtx/pull/6414) an 8-channel AAC always-available track accepts a 7.1 publisher | The track asked for channel configuration 8, which is reserved, so a 7.1 AAC publisher (configuration 7) was refused with `MPEG-4 audio configuration does not match`; now it is accepted | 2026-10-25 |
 
 ## Full record
 
