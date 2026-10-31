@@ -15,6 +15,8 @@ Making the AI stack faster and harder to break, one merged fix at a time. Receip
 
 More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
+[My projects](#my-own-projects) · [Selected fixes](#selected-fixes) · [Research in progress](#research-in-progress) · [Contributions](#contributions)
+
 ## Selected fixes
 
 ### kube-router: network-policy sync 320x faster, 99.8% less allocation (benchmark)
