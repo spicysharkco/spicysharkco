@@ -11,11 +11,11 @@
   <a href="https://huggingface.co/spicysharkco"><img alt="Hugging Face" src="https://img.shields.io/badge/Hugging%20Face-spicysharkco-0a1626?style=for-the-badge"></a>
 </p>
 
-Making the AI stack faster and harder to break, one merged fix at a time. Receipts below.
+I find and fix performance and reliability bugs in the infrastructure AI runs on, and write up how each one was found.
 
 More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
-[My projects](#my-own-projects) · [Selected fixes](#selected-fixes) · [Research in progress](#research-in-progress) · [Contributions](#contributions)
+[Selected fixes](#selected-fixes) · [My projects](#my-own-projects) · [Research in progress](#research-in-progress) · [Upstream work](#upstream-work)
 
 ## Selected fixes
 
@@ -62,90 +62,6 @@ More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/
 - **Quantization.** GGUF files that give each tensor group its own quant type, chosen by measured sensitivity, inside a fixed file size ([model card](https://huggingface.co/spicysharkco/Qwen3.8-27B-OBLITERATED-DYN-GGUF)). At the same size as the upstream Q4_K_M (16.81 GB), mean KL divergence from BF16 fell from 0.0348 to 0.0195 on 30,690 held-out tokens. About two thirds of that gain comes from the importance matrix; the rest comes from the per-tensor mix. CPU prompt processing runs at 0.85x the upstream file's speed. Limit: the evaluation is text only, and no task benchmark was run.
 - **Chess benchmark.** Changing which corner is light in the renderer moved per-square accuracy from 54.4% to 85.2%, and only 18 of 192 boards are exact after the fix. Limit: the public reproduction covers a bounded render and scoring path, not all 20,000 cells or the adaptation-training study.
 
-## Contributions
+## Upstream work
 
-<p align="center">
-  <a href="https://github.com/cloudnativelabs/kube-router"><img src="https://github.com/cloudnativelabs.png?size=64" width="48" height="48" alt="kube-router" title="kube-router"></a>
-  <a href="https://github.com/k3s-io/k3s"><img src="https://github.com/k3s-io.png?size=64" width="48" height="48" alt="k3s" title="k3s"></a>
-  <a href="https://github.com/opencv/opencv"><img src="https://github.com/opencv.png?size=64" width="48" height="48" alt="OpenCV" title="OpenCV"></a>
-  <a href="https://github.com/kubernetes-sigs/external-dns"><img src="https://github.com/kubernetes-sigs.png?size=64" width="48" height="48" alt="external-dns" title="external-dns"></a>
-  <a href="https://github.com/vllm-project/aibrix"><img src="https://github.com/vllm-project.png?size=64" width="48" height="48" alt="AIBrix" title="AIBrix"></a>
-  <a href="https://github.com/ome-projects/ome"><img src="https://github.com/ome-projects.png?size=64" width="48" height="48" alt="OME" title="OME"></a>
-  <a href="https://github.com/bluenviron/mediamtx"><img src="https://github.com/bluenviron.png?size=64" width="48" height="48" alt="mediamtx" title="mediamtx"></a>
-  <a href="https://github.com/clastix/kamaji"><img src="https://github.com/clastix.png?size=64" width="48" height="48" alt="Kamaji" title="Kamaji"></a>
-  <a href="https://github.com/DNSControl/dnscontrol"><img src="https://github.com/DNSControl.png?size=64" width="48" height="48" alt="DNSControl" title="DNSControl"></a>
-  <a href="https://github.com/derailed/k9s"><img src="https://github.com/derailed.png?size=64" width="48" height="48" alt="k9s" title="k9s"></a>
-  <a href="https://github.com/minio/minio-go"><img src="https://github.com/minio.png?size=64" width="48" height="48" alt="minio-go" title="minio-go"></a>
-  <a href="https://github.com/dapr/dapr"><img src="https://github.com/dapr.png?size=64" width="48" height="48" alt="Dapr" title="Dapr"></a>
-</p>
-
-| Project | What it is | Merged PRs | GitHub stars |
-|---|---|---|---|
-| [OpenCV](https://github.com/opencv/opencv) | Computer vision library | 2 | 91.3k |
-| [oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | Agent orchestration for OpenCode | 2 | 70.2k |
-| [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) | Multi-agent orchestration for Claude Code | 7 | 40.1k |
-| [llmfit](https://github.com/AlexsJones/llmfit) | Finds which LLMs run on your hardware | 4 | 38.6k |
-| [k9s](https://github.com/derailed/k9s) | Terminal UI for Kubernetes clusters | 1 | 34.9k |
-| [k3s](https://github.com/k3s-io/k3s) | Lightweight Kubernetes | 3 | 34.2k |
-| [oh-my-codex](https://github.com/Yeachan-Heo/oh-my-codex) | Hooks and agent teams for Codex CLI | 4 | 33.6k |
-| [Dapr](https://github.com/dapr/dapr) | Runtime for distributed applications | 1 | 26.2k |
-| [yfinance](https://github.com/ranaroussi/yfinance) | Market data from Yahoo Finance in Python | 1 | 25.6k |
-| [urfave/cli](https://github.com/urfave/cli) | Framework for command-line apps in Go | 2 | 24.3k |
-| [Prefect](https://github.com/PrefectHQ/prefect) | Workflow orchestration for data pipelines in Python | 3 | 24.0k |
-| [go-redis](https://github.com/redis/go-redis) | Redis client for Go | 1 | 22.3k |
-| [ONNX](https://github.com/onnx/onnx) | Open standard for machine learning models | 1 | 21.6k |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | Live media server (RTSP, WebRTC, SRT and more) | 9 | 20.5k |
-| [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) | gRPC to JSON proxy generator | 1 | 20.0k |
-| [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) | Time series database and monitoring | 1 | 18.0k |
-| [Litestream](https://github.com/benbjohnson/litestream) | Streaming replication for SQLite | 3 | 14.5k |
-| [pgx](https://github.com/jackc/pgx) | PostgreSQL driver for Go | 1 | 14.3k |
-| [cert-manager](https://github.com/cert-manager/cert-manager) | TLS certificate automation for Kubernetes | 1 | 14.1k |
-| [redis-py](https://github.com/redis/redis-py) | Python client for Redis | 2 | 13.7k |
-| [txtai](https://github.com/neuml/txtai) | AI framework for semantic search and LLM workflows | 1 | 13.1k |
-| [Kubescape](https://github.com/kubescape/kubescape) | Kubernetes security scanner | 2 | 11.8k |
-| [Linkerd](https://github.com/linkerd/linkerd2) | Service mesh for Kubernetes | 1 | 11.5k |
-| [PCL](https://github.com/PointCloudLibrary/pcl) | 3D point cloud processing in C++ | 1 | 11.2k |
-| [Xinference](https://github.com/xorbitsai/inference) | Serving for open LLMs, speech and multimodal models | 6 | 9.6k |
-| [goja](https://github.com/dop251/goja) | JavaScript engine in pure Go | 13 | 7.2k |
-| [helmfile](https://github.com/helmfile/helmfile) | Declarative Helm release management | 8 | 5.2k |
-| [AIBrix](https://github.com/vllm-project/aibrix) | Infrastructure for LLM inference on Kubernetes (vLLM project) | 13 | 5.2k |
-| [DNSControl](https://github.com/DNSControl/dnscontrol) | DNS configuration as code | 10 | 4.0k |
-| [NumPyro](https://github.com/pyro-ppl/numpyro) | Probabilistic programming on JAX | 5 | 2.8k |
-| [unpoller](https://github.com/unpoller/unpoller) | UniFi metrics for Prometheus and InfluxDB | 7 | 2.7k |
-| [kube-router](https://github.com/cloudnativelabs/kube-router) | Pod network, firewall and service proxy for Kubernetes | 2 | 2.5k |
-| [Kamaji](https://github.com/clastix/kamaji) | Hosted Kubernetes control planes | 13 | 2.1k |
-| [PyMdown Extensions](https://github.com/facelessuser/pymdown-extensions) | Extensions for Python Markdown | 6 | 1.1k |
-| [OjG](https://github.com/ohler55/ojg) | Fast JSON for Go | 25 | 956 |
-| [sql_exporter](https://github.com/burningalchemist/sql_exporter) | SQL metrics for Prometheus | 22 | 601 |
-| [ColorAide](https://github.com/facelessuser/coloraide) | Color library for Python | 6 | 365 |
-| [oras-go](https://github.com/oras-project/oras-go) | Go library for OCI artifacts | 18 | 295 |
-| [Soup Sieve](https://github.com/facelessuser/soupsieve) | CSS selectors for Beautiful Soup | 8 | 271 |
-| [wcmatch](https://github.com/facelessuser/wcmatch) | Wildcard and glob matching for Python | 7 | 169 |
-
-Star counts as of 2026-10-20; the ten rows added later use counts from 2026-11-03.
-
-## Recent merges
-
-Newest first, one per project.
-
-### AI and LLM inference
-
-| Project | Change | Result | Date |
-|---|---|---|---|
-| [KubeAI](https://github.com/kubeai-project/kubeai) | [#766](https://github.com/kubeai-project/kubeai/pull/766) the load balancer takes the new address of a Pod it already tracks, keeping its in-flight count | A ready Pod whose sandbox restarted with a new IP, with no unready state seen by reconcile, kept getting requests at the old IP; now they go to the new one | 2026-10-30 |
-| [K8sGPT](https://github.com/k8sgpt-ai/k8sgpt) | [#1847](https://github.com/k8sgpt-ai/k8sgpt/pull/1847) the HPA analyzer names the target with the HPA's namespace, not the `-n` filter | Without `-n` it printed `Deployment /example does not have resource configured.`; now `Deployment team-a/example` | 2026-10-30 |
-| [txtai](https://github.com/neuml/txtai) | [#1441](https://github.com/neuml/txtai/pull/1441) `Segmentation` ends paragraphs and sections at blank lines that hold spaces or tabs | `Segmentation(paragraphs=True)("Para A.\n  \nPara B.")` gave one paragraph; now two, as with an empty blank line | 2026-10-29 |
-| [llmfit](https://github.com/AlexsJones/llmfit) | [#1188](https://github.com/AlexsJones/llmfit/pull/1188) `search` keeps a model when every word of the query matches, as the TUI does | `llmfit search "llama 8b"`, the example in `docs/cli.md`, found 0 models; now 368 | 2026-10-26 |
-
-### Infrastructure
-
-| Project | Change | Result | Date |
-|---|---|---|---|
-| [Linkerd](https://github.com/linkerd/linkerd2) | [#15734](https://github.com/linkerd/linkerd2/pull/15734) pods inherit the deprecated `config.beta.linkerd.io/proxy-enable-native-sidecar` annotation from their namespace again | A namespace set to `"false"` still got native sidecars on new pods; now they get none | 2026-11-03 |
-| [external-dns](https://github.com/kubernetes-sigs/external-dns) | [#6819](https://github.com/kubernetes-sigs/external-dns/pull/6819) regression tests for the Istio sources reading the `ingress` annotation under `--annotation-prefix`; the lookup fix is from [#6465](https://github.com/kubernetes-sigs/external-dns/pull/6465) by [mwhittington21](https://github.com/mwhittington21), carried forward | With `--annotation-prefix=custom.io/` and no service targets, a Gateway's `custom.io/ingress` target gave no endpoints, so sync could delete owned records; now it gives the Ingress targets | 2026-11-02 |
-| [nats.py](https://github.com/nats-io/nats.py) | [#1071](https://github.com/nats-io/nats.py/pull/1071) ordered consumers and `ObjectStore.get()` parse V2 ACK reply subjects | With `js_ack_fc_v2` on nats-server 2.15, an ordered consumer stopped reading at its first message and `get()` never returned; now both work | 2026-11-02 |
-| [mediamtx](https://github.com/bluenviron/mediamtx) | [#6386](https://github.com/bluenviron/mediamtx/pull/6386) MPEG-TS recordings write the Opus track's channel count instead of a constant 2 | A mono Opus stream recorded as MPEG-TS read back as 2 channels; now 1 (6 for 6) | 2026-11-01 |
-
-## Full record
-
-The full list of merged pull requests, by area, with a write-up where there is one: [spicyshark.co/open-source](https://spicyshark.co/open-source/).
+Fixes merged into Kubernetes and AI-serving projects, among them k3s, kube-router, external-dns, cert-manager, Linkerd, Dapr, AIBrix (vLLM project), llm-d, KubeAI, OpenCV, ONNX, redis-py and go-redis. The full list, by area and with write-ups: [spicyshark.co/open-source](https://spicyshark.co/open-source/).
