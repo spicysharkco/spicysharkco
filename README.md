@@ -95,7 +95,7 @@ Each fix in full: the failure, the fix, the result and why it matters.
 - Fix: both calls use `send(..).await`, as `Backend::health` already did. A full queue now makes the caller wait instead of ending the process.
 - Result: a load test sent batches of 32 inputs to `/embed` from 4 threads and called `/health` from 32 threads, with forward passes slowed on purpose (compute capped at 4 CPU threads). Without the fix the server was gone by 11 s, with the `Full(..)` panic in its log; the same embed load without health traffic ran 40 s without a panic. With the fix the server ran the whole 75 s: 9 embed requests and 2334 health checks, all 200, and no panic. A new unit test fills the queue behind a blocked forward pass and fails with the same panic without the fix. Limit: only the CPU build was run end to end, and `/health` still waits behind forward passes, so a short probe timeout can still fail.
 - Why it matters: Text Embeddings Inference is Hugging Face's server for embedding and reranker models. Health checks during a long forward pass were enough to crash a busy server; no memory pressure or other fault was needed.
-- [PR #952](https://github.com/huggingface/text-embeddings-inference/pull/952), merged 2026-11-03
+- [PR #952](https://github.com/huggingface/text-embeddings-inference/pull/952), merged 2026-11-03 · [post](https://spicyshark.co/2026/11/16/text-embeddings-inference-health-checks-full-backend-queue.html)
 
 </details>
 
@@ -106,7 +106,7 @@ Each fix in full: the failure, the fix, the result and why it matters.
 - Fix: the early return no longer skips the flush once the decoder has decoded data; `stream()` keeps reading until that flushing read; and the loop that fills a read up to `amt` checks for the end of the body after each raw read. A truncated zstd body read with `read(amt)` now raises `DecodeError`, as `read()` and `read1()` already did.
 - Result: three of the new tests, small reads of a raw deflate body, of a `deflate, gzip` body and of a truncated zstd body, fail without the fix and pass with it. A companion fix, [#5315](https://github.com/urllib3/urllib3/pull/5315), covers gzip bodies of more than one member when a read ends exactly at a member boundary: with two 100-byte members, `while resp.read(100)` returned the second member over and over and never reached the end.
 - Why it matters: urllib3 is the HTTP client under `requests`. One bug returned a shorter body with no error, for raw deflate bodies read in chunks; the other could make a read loop run forever when a chunk ended on a gzip member boundary.
-- [PR #5316](https://github.com/urllib3/urllib3/pull/5316), merged 2026-11-11
+- [PR #5316](https://github.com/urllib3/urllib3/pull/5316), merged 2026-11-11 · [post](https://spicyshark.co/2026/11/16/urllib3-deflate-flush-bounded-read.html)
 
 </details>
 
