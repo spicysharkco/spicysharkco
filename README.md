@@ -73,7 +73,7 @@ Each fix in full: the failure, the fix, the result and why it matters.
 - Fix: convert the capacity to router blocks, `CacheNumBlocks * CacheBlockSize / GetBlockSize()`, rounded down and at least 1. It is unchanged when the two block sizes match or the engine does not report its block size.
 - Result: a new table test has six cases. On main three of them failed (31250 entries instead of 7812, 2 instead of 1, 1000 instead of 64000); with the fix all six pass under `go test -race`.
 - Why it matters: llm-d-router picks the pod for each inference request, partly by how much of the prompt each pod already has cached. An index larger than the engine's cache keeps prefixes the engine has evicted, so the prefix-cache scorer can overestimate cache hits and send a request to a pod that no longer holds its prefix. The analysis and reproduction in [issue #3139](https://github.com/llm-d/llm-d-router/issues/3139) pointed at the cause.
-- [PR #3476](https://github.com/llm-d/llm-d-router/pull/3476), merged 2026-10-20
+- [PR #3476](https://github.com/llm-d/llm-d-router/pull/3476), merged 2026-10-20 · [post](https://spicyshark.co/2026/11/23/llm-d-router-autotuned-lru-router-blocks.html)
 
 </details>
 
@@ -84,7 +84,7 @@ Each fix in full: the failure, the fix, the result and why it matters.
 - Fix: with `useMetadata` set, the client reads each listed file's header with one ranged GET, 10 at a time, and uses its timestamp. A file whose header cannot be read fails the listing with an error. The WebDAV CI job now runs the WebDAV client.
 - Result: against the CI job's WebDAV server, three existing timestamp tests in the shared integration suite fail without the fix and pass with it; `TestReplicaClient_TimestampPreservation` was off by almost an hour (59m59.647s). New unit tests in the `webdav` package fail without the change, and `go test -race ./webdav/` passes with it. The cost: on that test server, listing 999 files took 0.2 to 0.4 s with header reads on, about 0.05 s with them off.
 - Why it matters: Litestream is a disaster recovery tool for SQLite that copies each change to another location, such as a file, object storage or a WebDAV server. Restore to a timestamp is its point-in-time recovery, and on WebDAV it could choose files by the wrong clock.
-- [PR #1576](https://github.com/benbjohnson/litestream/pull/1576), merged 2026-10-27
+- [PR #1576](https://github.com/benbjohnson/litestream/pull/1576), merged 2026-10-27 · [post](https://spicyshark.co/2026/11/23/litestream-webdav-ltx-header-timestamps.html)
 
 </details>
 
