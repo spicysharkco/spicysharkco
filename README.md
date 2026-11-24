@@ -16,7 +16,7 @@ I find and fix performance and reliability bugs in the infrastructure AI runs on
 More at [Learn](https://spicyshark.co/learn/), [Research](https://spicyshark.co/research/) and the [open-source record](https://spicyshark.co/open-source/).
 
 <p align="center">
-  <a href="#selected-fixes">Selected fixes</a> · <a href="#my-own-projects">My projects</a> · <a href="#research-in-progress">Research in progress</a> · <a href="#upstream-work">Upstream work</a>
+  <a href="#selected-fixes">Selected fixes</a> · <a href="#published-security-advisories">Security advisories</a> · <a href="#my-own-projects">My projects</a> · <a href="#research-in-progress">Research in progress</a> · <a href="#upstream-work">Upstream work</a>
 </p>
 
 ## Selected fixes
@@ -109,6 +109,14 @@ Each fix in full: the failure, the fix, the result and why it matters.
 - [PR #5316](https://github.com/urllib3/urllib3/pull/5316), merged 2026-11-11 · [post](https://spicyshark.co/2026/11/16/urllib3-deflate-flush-bounded-read.html)
 
 </details>
+
+## Published security advisories
+
+GitHub Security Advisories that list me in their credits. The Credit column gives the role the advisory records.
+
+| Project | Advisory | CVE | Severity | Credit | Published |
+|---|---|---|---|---|---|
+| [LMCache](https://github.com/LMCache/LMCache) | [GHSA-hhqh-8jpj-27rf](https://github.com/LMCache/LMCache/security/advisories/GHSA-hhqh-8jpj-27rf): the frontend proxy forwarded unauthenticated requests to any local UNIX socket · [post](https://spicyshark.co/2026/11/24/lmcache-frontend-proxy-could-reach-any-local-unix-socket-fixed-in-0-5-8.html) |  | Critical 9.8 | Finder | 2026-11-23 |
 
 ## My own projects
 
